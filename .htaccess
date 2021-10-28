@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+RedirectMatch 403 ^/gmail-api/credentials_curtiscs.json$
+RedirectMatch 403 ^/gmail-api/credentials.json$
+Options -Indexes
